@@ -1,0 +1,13 @@
+name: Example
+
+on: push
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print hello
+      run: echo "Hello World"
+  - run:
+      COMPILER=$(root-config --cxx)
+      $COMPILER -g -O3 -Wall -Wextra -Wpedantic -o skim skim.cxx
